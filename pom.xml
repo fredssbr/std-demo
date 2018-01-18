@@ -75,23 +75,39 @@
 				<version>0.13.1</version>
 				<executions>
 					<execution>
+                        <id>schema-country</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>
+                        <configuration>
+                            <schemaLanguage>WSDL</schemaLanguage>
+                            <generatePackage>country.wsdl</generatePackage>
+                            <schemas>
+                                <schema>
+                                    <url>http://www.webservicex.net/country.asmx?WSDL</url>
+                                </schema>
+                            </schemas>
+                        </configuration>
 					</execution>
+
+                    <execution>
+                        <id>schema-weather</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaLanguage>WSDL</schemaLanguage>
+                            <generatePackage>weather.wsdl</generatePackage>
+                            <schemas>
+                                <schema>
+                                    <url>http://www.webservicex.net/globalweather.asmx?WSDL</url>
+                                </schema>
+                            </schemas>
+                        </configuration>
+                    </execution>
+
 				</executions>
-				<configuration>
-					<schemaLanguage>WSDL</schemaLanguage>
-					<generatePackage>country.wsdl</generatePackage>
-					<schemas>
-						<schema>
-							<url>http://www.webservicex.net/country.asmx?WSDL</url>
-						</schema>
-					</schemas>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
