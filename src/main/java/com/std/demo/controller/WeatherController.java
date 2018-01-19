@@ -19,6 +19,6 @@ public class WeatherController {
     @ApiOperation(value = "Gets a list of cities by country.", response = String.class)
     @RequestMapping(value = "/citiesByCountry", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public String getCitiesByCountry(@RequestBody Country country){
-        return service.getCitiesByCountry(country.getCountryName());
+        return service.getCitiesByCountry(country);
     }
 }

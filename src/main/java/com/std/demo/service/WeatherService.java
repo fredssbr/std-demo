@@ -1,6 +1,7 @@
 package com.std.demo.service;
 
 import com.std.demo.client.WeatherClient;
+import com.std.demo.model.Country;
 import org.json.XML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,8 @@ public class WeatherService {
     @Autowired
     WeatherClient client;
 
-    public String getCitiesByCountry(String countryName) {
-        GetCitiesByCountryResponse cities =  client.getCitiesByCountry(countryName);
+    public String getCitiesByCountry(Country country) {
+        GetCitiesByCountryResponse cities =  client.getCitiesByCountry(country.getCountryName());
         return XML.toJSONObject(cities.getGetCitiesByCountryResult()).toString();
     }
 
